@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rossetto Velvet Matte — Beauty&Co</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    /* Piccolo extra (sempre BEM) specifico pagina prodotto */
+    .product {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+    .product__box {
+      border: 1px solid #eee;
+      border-radius: 16px;
+      padding: 14px;
+    }
+    .product__title { margin: 0 0 6px; }
+    .product__price { font-weight: 900; font-size: 1.2rem; margin: 8px 0 12px; }
+    .product__list { margin: 0; padding-left: 18px; color: #444; }
+    @media (max-width: 860px) {
+      .product { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="../index.html">
+        <span class="brand__name">Beauty&Co</span>
+        <span class="brand__tag">makeup • skincare • profumi</span>
+      </a>
+      <nav class="nav" aria-label="Navigazione principale">
+        <ul class="nav__list">
+          <li class="nav__item"><a class="nav__link" href="../index.html">Home</a></li>
+          <li class="nav__item"><a class="nav__link" href="catalogo.html">Catalogo</a></li>
+          <li class="nav__item"><a class="nav__link" href="chi-siamo.html">Chi siamo</a></li>
+          <li class="nav__item"><a class="nav__link" href="contatti.html">Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <h1 class="section__title">Scheda prodotto</h1>
+
+      <section class="product">
+        <div class="product__box">
+          <img src="../immagini/prodotto-1.jpg" alt="Rossetto Velvet Matte" />
+        </div>
+
+        <div class="product__box">
+          <h2 class="product__title">Rossetto Velvet Matte</h2>
+          <p>Rossetto a lunga durata con finish opaco e texture confortevole.</p>
+          <div class="product__price">€ 12,90</div>
+
+          <a class="button button--primary" href="contatti.html">Aggiungi al carrello (demo)</a>
+          <a class="button" href="catalogo.html">Torna al catalogo</a>
+
+          <h3>Caratteristiche</h3>
+          <ul class="product__list">
+            <li>Alta pigmentazione</li>
+            <li>Effetto velluto</li>
+            <li>Ideale per uso quotidiano</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__row">
+      <small>© 2026 Beauty&Co — progetto scolastico</small>
+      <small><a href="contatti.html">Assistenza</a></small>
+    </div>
+  </footer>
+</body>
+</html>
