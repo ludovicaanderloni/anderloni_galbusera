@@ -2,15 +2,15 @@
 
 /* PALETTE */
 :root{
-  --bg: #ffffff;        /* bianco */
+  --bg: #ffffff;
   --surface: #ffffff;
-  --text: #111111;      /* quasi nero */
+  --text: #111111;
   --muted: #444444;
   --border: #e8e1e4;
 
-  --rose: #ba8696;      /* rosa antico */
-  --rose-dark: #000000; /* rosa antico */
-  --rose-soft: #f6f1f3; /* rosa molto chiaro */
+  --rose: #ba8696;
+  --rose-dark: #000000; /* (nota: è nero, non rosa) */
+  --rose-soft: #f6f1f3;
 }
 
 /* RESET */
@@ -22,8 +22,7 @@ body{
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.6;
   color: var(--text);
-  background: var(--bg);
-  background-color: #fff6fa; /* rosa antico chiaro */
+  background-color: #fff6fa; /* sfondo rosa chiaro */
 }
 
 /* Titoli eleganti (standard) */
@@ -39,12 +38,22 @@ body{
   letter-spacing: -0.3px;
 }
 
-/* HEADER */
-.header{
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-  background-color: #ffffff;
+/* Linea decorativa sotto i titoli */
+.popolari__title::after,
+.catalogo__title::after,
+.chi__title::after,
+.contatti__title::after{
+  content: "";
+  display: block;
+  width: 64px;
+  height: 3px;
+  background: var(--rose);
+  margin-top: 10px;
+  border-radius: 999px;
 }
+
+/* HEADER */
+.header{ background-color: #ffffff; }
 
 .header__container{
   max-width: 1100px;
@@ -74,7 +83,7 @@ body{
   color: var(--text);
   padding: 8px 12px;
   border-radius: 999px;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: 0.2s ease;
 }
 
 .header__link:hover{
@@ -82,7 +91,6 @@ body{
   color: var(--rose-dark);
 }
 
-/* Se vuoi pagina attiva */
 .header__link--active{
   background: var(--rose-soft);
   color: var(--rose-dark);
@@ -101,7 +109,6 @@ body{
 .intro__title{
   font-size: 36px;
   margin-bottom: 12px;
-  color: var(--text);
 }
 
 .intro__text{
@@ -110,7 +117,6 @@ body{
   color: var(--muted);
 }
 
-/* Bottone elegante: nero + dettaglio rosa antico */
 .intro__button{
   display: inline-block;
   text-decoration: none;
@@ -119,7 +125,7 @@ body{
   padding: 12px 20px;
   border-radius: 999px;
   border: 1px solid var(--text);
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  transition: 0.2s ease;
 }
 
 .intro__button:hover{
@@ -128,7 +134,6 @@ body{
   transform: translateY(-2px);
 }
 
-/* Layout intro con immagine */
 .intro__layout{
   display: flex;
   align-items: center;
@@ -155,21 +160,6 @@ body{
 .popolari__title{
   font-size: 22px;
   margin-bottom: 16px;
-  color: var(--text);
-}
-
-/* linea decorativa elegante sotto i titoli */
-.popolari__title::after,
-.catalogo__title::after,
-.chi__title::after,
-.contatti__title::after{
-  content: "";
-  display: block;
-  width: 64px;
-  height: 3px;
-  background: var(--rose);
-  margin-top: 10px;
-  border-radius: 999px;
 }
 
 .popolari__grid{
@@ -184,7 +174,7 @@ body{
   border-radius: 20px;
   background: var(--surface);
   padding: 14px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: 0.2s ease;
 }
 
 .card-prodotto:hover{
@@ -210,7 +200,6 @@ body{
   margin-bottom: 12px;
 }
 
-/* Link "Scopri" elegante */
 .card-prodotto__link{
   display: inline-block;
   text-decoration: none;
@@ -219,7 +208,7 @@ body{
   background: #fff;
   padding: 8px 12px;
   border-radius: 999px;
-  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  transition: 0.2s ease;
 }
 
 .card-prodotto__link:hover{
@@ -239,7 +228,6 @@ body{
 .catalogo__title{
   font-size: 28px;
   margin-bottom: 24px;
-  color: var(--text);
 }
 
 /* PRODOTTO DETTAGLIO */
@@ -256,7 +244,7 @@ body{
 
 .prodotto__img{
   width: 100%;
-  height: auto;          /* niente altezza fissa */
+  height: auto;
   border-radius: 14px;
   margin-bottom: 12px;
   border: 1px solid var(--border);
@@ -274,18 +262,13 @@ body{
   font-size: 18px;
 }
 
-.prodotto__short{
-  color: var(--muted);
-}
-
-.prodotto__subtitle{
-  margin-bottom: 10px;
-}
-
+.prodotto__short,
 .prodotto__long{
   color: var(--muted);
-  margin-bottom: 12px;
 }
+
+.prodotto__subtitle{ margin-bottom: 10px; }
+.prodotto__long{ margin-bottom: 12px; }
 
 /* FOOTER */
 .footer{
@@ -311,18 +294,15 @@ body{
 .contatti__title{
   font-size: 28px;
   margin-bottom: 16px;
-  color: var(--text);
 }
 
-.contatti__intro{
+.contatti__intro,
+.contatti__info{
   margin-bottom: 20px;
   color: var(--muted);
 }
 
-.contatti__info{
-  margin-bottom: 24px;
-  color: var(--muted);
-}
+.contatti__info{ margin-bottom: 24px; }
 
 .contatti__form{
   display: flex;
@@ -358,7 +338,7 @@ body{
   background: var(--text);
   color: #fff;
   cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition: 0.2s ease;
 }
 
 .contatti__button:hover{
@@ -377,7 +357,6 @@ body{
 .chi__title{
   font-size: 28px;
   margin-bottom: 24px;
-  color: var(--text);
 }
 
 .chi__section{ margin-bottom: 24px; }
@@ -387,14 +366,13 @@ body{
   margin-bottom: 8px;
 }
 
-.chi__text{ color: var(--muted); }
-
-.chi__list{ padding-left: 20px; }
-
+.chi__text,
 .chi__list li{
-  margin-bottom: 6px;
   color: var(--muted);
 }
+
+.chi__list{ padding-left: 20px; }
+.chi__list li{ margin-bottom: 6px; }
 
 /* RESPONSIVE */
 @media (max-width: 600px){
@@ -404,10 +382,8 @@ body{
   }
 
   .intro__title{ font-size: 28px; }
-
   .intro__layout{ flex-direction: column; }
 
   .popolari__grid{ grid-template-columns: 1fr; }
-
   .prodotto{ grid-template-columns: 1fr; }
 }
